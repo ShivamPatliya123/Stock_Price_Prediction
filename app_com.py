@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import yfinance as yf
 from flask import Flask, render_template, request
 from datetime import date
-from sklearn.preprocessing import MaxAbsScaler
+from sklearn.preprocessing import MaxAbsScaler,MinMaxScaler
 from tensorflow.keras.models import load_model
 import os
 import time
@@ -60,7 +60,8 @@ def index():
         data_training = pd.DataFrame(df[column][:int(len(df)*0.8)])
         data_testing = pd.DataFrame(df[column][int(len(df)*0.8):])
 
-        scaler = MaxAbsScaler()
+        # scaler = MaxAbsScaler()
+        scaler = MinMaxScaler()
         scaler.fit(data_training)
 
         past_100 = data_training.tail(100)

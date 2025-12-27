@@ -1,50 +1,13 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-    <title>Stock Price Prediction</title>
-</head>
-<body>
-    <h1>Stock Price Prediction</h1>
 
-    <form method="post">
-        <input type="text" name="stock" placeholder="Enter Stock Symbol" required>
-        <button type="submit">Predict</button>
-    </form>
-
-    {% if error %}
-        <p style="color:red">{{ error }}</p>
-    {% endif %}
-
-    {% if stats %}
-        <h2>Stock Statistics</h2>
-        {{ stats | safe }}
-    {% endif %}
-
-    {% if plot_ma_url %}
-        <h2>100 Days MA</h2>
-        <img src="{{ plot_ma_url }}" width="800">
-    {% endif %}
-
-    {% if plot_ma2_url %}
-        <h2>100 & 200 Days MA</h2>
-        <img src="{{ plot_ma2_url }}" width="800">
-    {% endif %}
-
-    {% if plot_url %}
-        <h2>Prediction Graph</h2>
-        <img src="{{ plot_url }}" width="800">
-    {% endif %}
-</body>
-</html> -->
 <!DOCTYPE html>
 <html>
 <head>
     <title>Stock Price Prediction</title>
 </head>
 <body>
-    <h1>Stock Price Prediction</h1>
+    <h1 style="text-align: center;">Stock Price Prediction</h1>
 
-    <form method="post">
+    <form method="post" style="text-align: center;">
         <input type="text" name="stock" placeholder="Enter Stock Symbol" required>
 
         <!-- Select Close or High -->
@@ -61,28 +24,28 @@
     {% endif %}
 
     {% if price_label %}
-    <h2 style="color:darkblue;">{{ price_label }}</h2>
+    <h2 style="color:darkblue; text-align: center;">{{ price_label }}</h2>
     {% endif %}
 
 
     {% if stats %}
-        <h2>Stock Statistics</h2>
+        <h2 style="text-align: center;">Stock Statistics</h2>
         {{ stats | safe }}
     {% endif %}
 
     {% if plot_ma_url %}
-        <h2>100 Days Moving Average</h2>
-        <img src="{{ plot_ma_url }}" width="800">
+        <h2 style="text-align: center;">100 Days Moving Average</h2>
+        <img src="{{ plot_ma_url }}" width="1100" style="text-align: center;">
     {% endif %}
 
     {% if plot_ma2_url %}
-        <h2>100 & 200 Days Moving Average</h2>
-        <img src="{{ plot_ma2_url }}" width="800">
+        <h2 style="text-align: center;">100 & 200 Days Moving Average</h2>
+        <img src="{{ plot_ma2_url }}" width="1100" style="text-align: center;">
     {% endif %}
 
     {% if plot_url %}
-        <h2>Prediction Graph</h2>
-        <img src="{{ plot_url }}" width="800">
+        <h2 style="text-align: center;">Prediction Graph</h2>
+        <img src="{{ plot_url }}" width="1100" style="text-align: center;">
     {% endif %}
 </body>
 </html>
